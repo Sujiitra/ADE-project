@@ -60,7 +60,6 @@ public class FChallengerView extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         workoutPlanTable = new javax.swing.JTable();
-        activityLogButton = new javax.swing.JButton();
         viewButton = new javax.swing.JButton();
         downloadButton = new javax.swing.JButton();
         selectInvalid = new javax.swing.JLabel();
@@ -97,13 +96,6 @@ public class FChallengerView extends javax.swing.JPanel {
             }
         ));
         jScrollPane1.setViewportView(workoutPlanTable);
-
-        activityLogButton.setText("Update Activity Log");
-        activityLogButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                activityLogButtonActionPerformed(evt);
-            }
-        });
 
         viewButton.setText("View Plan");
         viewButton.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -157,33 +149,28 @@ public class FChallengerView extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addComponent(viewButton)
+                        .addGap(37, 37, 37)
+                        .addComponent(downloadButton)
+                        .addGap(140, 140, 140)
+                        .addComponent(playVideoButton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(viewButton)
-                                .addGap(37, 37, 37)
-                                .addComponent(downloadButton)
-                                .addGap(140, 140, 140)
-                                .addComponent(playVideoButton))
+                                .addGap(178, 178, 178)
+                                .addComponent(jLabel3))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(178, 178, 178)
-                                        .addComponent(jLabel3))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(169, 169, 169)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(selectInvalid, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(332, 332, 332)
-                        .addComponent(activityLogButton)))
+                                .addGap(169, 169, 169)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(selectInvalid, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(149, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
@@ -220,9 +207,7 @@ public class FChallengerView extends javax.swing.JPanel {
                             .addComponent(viewButton)
                             .addComponent(downloadButton)
                             .addComponent(playVideoButton))))
-                .addGap(36, 36, 36)
-                .addComponent(activityLogButton)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -243,13 +228,6 @@ public class FChallengerView extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) rightPanel.getLayout();
         layout.next(rightPanel);
     }//GEN-LAST:event_logOutButtonActionPerformed
-
-    private void activityLogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activityLogButtonActionPerformed
-        CcActivityLog newHomePanel = new CcActivityLog(rightPanel, lId);
-        rightPanel.add(newHomePanel);
-        CardLayout layout = (CardLayout) rightPanel.getLayout();
-        layout.next(rightPanel);
-    }//GEN-LAST:event_activityLogButtonActionPerformed
 
     private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
         if (Desktop.isDesktopSupported()) {
@@ -327,7 +305,6 @@ public class FChallengerView extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton activityLogButton;
     private javax.swing.JButton downloadButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -544,6 +544,8 @@ public class FormPanel extends javax.swing.JPanel {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         checkinputs();
+        char[] a=cpwdTextField.getPassword();
+        String pwd=new String(a);
 
         UserPanel newUserPanel = new UserPanel();
         newUserPanel.setFirstName(fNameTextField.getText());
@@ -555,7 +557,7 @@ public class FormPanel extends javax.swing.JPanel {
         newUserPanel.setCountry((String) countryComboBox.getSelectedItem());
         newUserPanel.setPh(phoneTextField.getText());
         newUserPanel.setPic(picLabel.getIcon());
-        newUserPanel.setPwd(pwdTextField.getPassword().toString());
+        newUserPanel.setPwd(Arrays.toString(cpwdTextField.getPassword()));
 
         String ImgIconStr = convertIconToString(picLabel.getIcon());
 
@@ -571,7 +573,7 @@ public class FormPanel extends javax.swing.JPanel {
             stmt.setString(7, (String) countryComboBox.getSelectedItem());
             stmt.setString(8, phoneTextField.getText());
             stmt.setString(9, ImgIconStr);
-            stmt.setString(10, cpwdTextField.getPassword().toString());
+            stmt.setString(10, pwd);
             int rows = stmt.executeUpdate();
             conn.close();
         } catch (SQLException e) {

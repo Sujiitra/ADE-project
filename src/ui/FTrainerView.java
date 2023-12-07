@@ -238,6 +238,7 @@ public class FTrainerView extends javax.swing.JPanel {
         }
         JOptionPane.showMessageDialog(null, "File uploaded Successfully");
         workoutWeek.setText("");
+        
 
     }//GEN-LAST:event_uploadButtonActionPerformed
 
@@ -295,9 +296,9 @@ public class FTrainerView extends javax.swing.JPanel {
         comment = commentField.getText();
         UserPanel p = new UserPanel();
         int i = activityLogTable.getSelectedRow();
-        p.setFC(comment);
+        p.setAC(comment);
         p.setPid((int) activityLogTable.getValueAt(i, 0));
-        p.setFLD((String) activityLogTable.getValueAt(i, 1));
+        p.setALD((String) activityLogTable.getValueAt(i, 1));
 
         try {
             String query = "UPDATE ACTIVITYLOG SET COMMENTS=? WHERE CID=? AND ACTIVITYDATE=? ";

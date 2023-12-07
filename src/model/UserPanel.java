@@ -41,6 +41,7 @@ public class UserPanel {
     private String vp;
     private String apdf;
     private String fpdf;
+    private String pwd;
 
     public int getPid() {
         return pid;
@@ -124,11 +125,11 @@ public class UserPanel {
     }
 
     public String getPwd() {
-        return msg;
+        return pwd;
     }
 
-    public void setPwd(String msg) {
-        this.msg = msg;
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 
     public void setBrk(String brk) {
